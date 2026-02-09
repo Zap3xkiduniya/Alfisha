@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Alfisha ❤️</title>
+
+<style>
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#ff758c,#ff7eb3);
+font-family:Arial;
+overflow:hidden;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:25px;
+text-align:center;
+width:320px;
+box-shadow:0 10px 30px rgba(0,0,0,.2);
+animation:pop 1s ease;
+}
+
+@keyframes pop{
+0%{transform:scale(0);}
+100%{transform:scale(1);}
+}
+
+h1{
+color:#ff4d6d;
+}
+
+p{
+font-size:14px;
+line-height:1.5;
+}
+
+button{
+margin-top:15px;
+padding:10px 20px;
+border:none;
+border-radius:20px;
+background:#ff4d6d;
+color:white;
+font-size:16px;
+cursor:pointer;
+animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.1);}
+100%{transform:scale(1);}
+}
+
+.heart{
+position:absolute;
+color:red;
+font-size:20px;
+animation:float 6s linear infinite;
+}
+
+@keyframes float{
+0%{bottom:-10px;opacity:1;}
+100%{bottom:100%;opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+<h1>Alfisha ❤️</h1>
+
+<p>
+1. Tum meri zindagi ka sabse khoobsurat hissa ho 💕<br>
+2. Tum haste ho na, mera din ban jata hai 🥺<br>
+3. Tum gussa karti ho to bhi cute lagti ho 😌<br>
+4. Tumhare bina sab kuch adhoora sa lagta hai 💔<br>
+5. Har dua me sirf tumhara naam hota hai 🤍<br>
+6. Tum meri aadat nahi, meri zarurat ho ❤️<br>
+7. Tum meri har khushi ki wajah ho ✨<br>
+8. Please maan jao jaan, dil bahut udaas hai 😔<br>
+9. I love you Alfisha… hamesha 💖
+</p>
+
+<button onclick="alert('Thank you meri jaan ❤️')">Maan jao na 🥺</button>
+</div>
+
+<script>
+setInterval(()=>{
+let heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="❤️";
+heart.style.left=Math.random()*100+"%";
+heart.style.fontSize=(Math.random()*20+10)+"px";
+document.body.appendChild(heart);
+
+setTimeout(()=>heart.remove(),6000);
+},300);
+</script>
+
+</body>
+</html>
