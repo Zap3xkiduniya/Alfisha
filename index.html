@@ -1,109 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Alfisha ❤️</title>
-
-<style>
-body{
-margin:0;
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-background:linear-gradient(135deg,#ff758c,#ff7eb3);
-font-family:Arial;
-overflow:hidden;
-}
-
-.card{
-background:white;
-padding:25px;
-border-radius:25px;
-text-align:center;
-width:320px;
-box-shadow:0 10px 30px rgba(0,0,0,.2);
-animation:pop 1s ease;
-}
-
-@keyframes pop{
-0%{transform:scale(0);}
-100%{transform:scale(1);}
-}
-
-h1{
-color:#ff4d6d;
-}
-
-p{
-font-size:14px;
-line-height:1.5;
-}
-
-button{
-margin-top:15px;
-padding:10px 20px;
-border:none;
-border-radius:20px;
-background:#ff4d6d;
-color:white;
-font-size:16px;
-cursor:pointer;
-animation:pulse 1.5s infinite;
-}
-
-@keyframes pulse{
-0%{transform:scale(1);}
-50%{transform:scale(1.1);}
-100%{transform:scale(1);}
-}
-
-.heart{
-position:absolute;
-color:red;
-font-size:20px;
-animation:float 6s linear infinite;
-}
-
-@keyframes float{
-0%{bottom:-10px;opacity:1;}
-100%{bottom:100%;opacity:0;}
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alfisha 💖 Emergency Kit</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-
 <body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-heart"><i class="fas fa-heart"></i></div>
+            <h2>Preparing love… 💖</h2>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
 
-<div class="card">
-<h1>Alfisha ❤️</h1>
+    <!-- Music Toggle Button -->
+    <button id="music-toggle" class="music-toggle">
+        <i class="fas fa-music"></i>
+        <span>Music</span>
+    </button>
 
-<p>
-1. Tum meri zindagi ka sabse khoobsurat hissa ho 💕<br>
-2. Tum haste ho na, mera din ban jata hai 🥺<br>
-3. Tum gussa karti ho to bhi cute lagti ho 😌<br>
-4. Tumhare bina sab kuch adhoora sa lagta hai 💔<br>
-5. Har dua me sirf tumhara naam hota hai 🤍<br>
-6. Tum meri aadat nahi, meri zarurat ho ❤️<br>
-7. Tum meri har khushi ki wajah ho ✨<br>
-8. Please maan jao jaan, dil bahut udaas hai 😔<br>
-9. I love you Alfisha… hamesha 💖
-</p>
+    <!-- Screen 1: Welcome -->
+    <div id="screen1" class="screen active">
+        <div class="welcome-card">
+            <div class="avatar">
+                <div class="avatar-inner">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+            </div>
+            <h1>Hey Alfisha 👀💖</h1>
+            <p>I heard a storm is coming 🌩️🍫</p>
+            <button class="glow-btn primary" onclick="nextScreen()">
+                <i class="fas fa-kit-medical"></i>
+                Open Emergency Kit 🚨
+            </button>
+        </div>
+    </div>
 
-<button onclick="alert('Thank you meri jaan ❤️')">Maan jao na 🥺</button>
-</div>
+    <!-- Screen 2: Emergency Kit -->
+    <div id="screen2" class="screen">
+        <h1>Period Emergency Kit 😂❤️</h1>
+        <div class="kit-grid">
+            <div class="kit-card" data-icon="🍫">
+                <div class="card-icon">🍫</div>
+                <h3>Chocolate Supply</h3>
+                <p>Unlimited chocolate subscription activated.</p>
+            </div>
+            <div class="kit-card" data-icon="🤗">
+                <div class="card-icon">🤗</div>
+                <h3>Free Hug Pass</h3>
+                <p>Valid 24/7. No expiry.</p>
+            </div>
+            <div class="kit-card" data-icon="🎬">
+                <div class="card-icon">🎬</div>
+                <h3>Movie Marathon</h3>
+                <p>You choose the movie… even boring ones.</p>
+            </div>
+            <div class="kit-card" data-icon="😌">
+                <div class="card-icon">😌</div>
+                <h3>Mood Swing Protection</h3>
+                <p>Boyfriend handling service activated.</p>
+            </div>
+        </div>
+        <button class="glow-btn primary" onclick="nextScreen()">
+            But wait… one more thing 💌
+        </button>
+    </div>
 
-<script>
-setInterval(()=>{
-let heart=document.createElement("div");
-heart.className="heart";
-heart.innerHTML="❤️";
-heart.style.left=Math.random()*100+"%";
-heart.style.fontSize=(Math.random()*20+10)+"px";
-document.body.appendChild(heart);
+    <!-- Screen 3: Romantic Message -->
+    <div id="screen3" class="screen">
+        <div class="romantic-container">
+            <div class="romantic-text" id="romanticText">
+                <div class="line">I know these days are not easy…</div>
+                <div class="line">But remember something…</div>
+                <div class="line">You are strong, beautiful and magical ✨</div>
+                <div class="line">And I will always be here for you 🤍</div>
+            </div>
+            <button class="glow-btn primary" onclick="heartsExplosion()">
+                <i class="fas fa-heart"></i>
+                Tap to See My Heart ❤️
+            </button>
+        </div>
+    </div>
 
-setTimeout(()=>heart.remove(),6000);
-},300);
-</script>
+    <!-- Screen 4: Funny Popup -->
+    <div id="screen4" class="screen">
+        <div class="popup-surprise">
+            <div class="warning-header">
+                <i class="fas fa-exclamation-triangle"></i>
+                WARNING ⚠️
+            </div>
+            <h2>This girl is under boyfriend protection during periods.</h2>
+            <div class="side-effects">
+                <div class="effect">• Extra hugs 🤗</div>
+                <div class="effect">• Extra food 🍕</div>
+                <div class="effect">• Extra love ❤️</div>
+            </div>
+            <button class="glow-btn primary" onclick="hugExplosion()">
+                <i class="fas fa-hands-pressing"></i>
+                Send Virtual Hug 🤗
+            </button>
+        </div>
+    </div>
 
+    <!-- Audio Element -->
+    <audio id="background-music" loop>
+        <source src="music.mp3" type="audio/mpeg">
+        <!-- Fallback: You can replace with your own romantic instrumental -->
+        Your browser doesn't support audio.
+    </audio>
+
+    <script src="script.js"></script>
 </body>
 </html>
